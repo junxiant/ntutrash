@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1581242493 source:d:\git\c\tut3.3\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1581242493 source:f:\git\c\tut3.3\main.c
+	<stdio.h>
+	<stdlib.h>
+
