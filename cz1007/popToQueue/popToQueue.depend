@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1585932304 source:f:\git\c prac\poptoqueue\main.c
+	<stdio.h>
+	<stdlib.h>
+	<limits.h>
+

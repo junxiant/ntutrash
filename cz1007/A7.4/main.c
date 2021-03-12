@@ -1,66 +1,46 @@
 #include <stdio.h>
-float rPower1(float num, int p);
-void rPower2(float num, int p, float *result);
+int rCountZeros1(int num);
+void rCountZeros2(int num, int *result);
 int main()
 {
- int power;
- float number, result;
+    int number, result;
 
- printf("Enter the number and power: \n");
- scanf("%f %d", &number, &power);
- printf("rPower1(): %.2f\n", rPower1(number, power));
- rPower2(number, power, &result);
- printf("rPower2(): %.2f\n", result);
- return 0;
+    printf("Enter the number: \n");
+    scanf("%d", &number);
+    printf("rCountZeros1(): %d\n", rCountZeros1(number));
+    rCountZeros2(number, &result);
+    printf("rCountZeros2(): %d\n", result);
+    return 0;
 }
-float rPower1(float num, int p)
+int rCountZeros1(int num)
 {
- /* Write your code here */
-    if(p == 0 || num == 1)
-    {
-        return 1;
-    }
-    else if(num == 0)
+    /* Write your program code here */
+    if(num<10)
     {
         return 0;
     }
-    else if(p == 1)
+    if(num % 10 == 0)
     {
-        return num;
+        return 1+rCountZeros1(num/10);
     }
-    else if(p > 1)
+    else
     {
-        return (num*rPower1(num, p-1));
+        return rCountZeros1(num/10);
     }
-    else if(p < 0)
-    {
-       return (1/rPower1(num, -p));
-    }
-
 }
-void rPower2(float num, int p, float *result)
+void rCountZeros2(int num, int *result)
 {
- /* Write your code here */
-     if(p == 0 || num == 1)
-    {
-        *result = 1;
-    }
-    else if(num == 0)
+    /* Write your program code here */
+    if(num<10)
     {
         *result = 0;
     }
-    else if(p == 1)
+    if(num % 10 == 0)
     {
-        *result = num;
+        *result = 1+rCountZeros1(num/10);
     }
-    else if(p > 1)
+    else
     {
-        rPower2(num, p-1, result);
-        *result = (*result) * num;
-    }
-    else if(p < 0)
-    {
-       rPower2(num, -p, result);
-       *result = 1 / (*result);
+        *result = rCountZeros1(num/10);
     }
 }

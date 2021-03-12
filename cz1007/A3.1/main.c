@@ -1,59 +1,41 @@
 #include <stdio.h>
-
 double computePay1(int noOfHours, int payRate);
 void computePay2(int noOfHours, int payRate, double *grossPay);
-
 int main()
 {
-    int noOfHours = 0;
-    int payRate = 0;
-    double grossPay = 0;
+    int noOfHours, payRate;
+    double grossPay;
 
     printf("Enter number of hours: \n");
     scanf("%d", &noOfHours);
-
     printf("Enter hourly pay rate: \n");
     scanf("%d", &payRate);
-
     printf("computePay1(): %.2f\n", computePay1(noOfHours, payRate));
-
     computePay2(noOfHours, payRate, &grossPay);
     printf("computePay2(): %.2f\n", grossPay);
-
     return 0;
-
 }
 double computePay1(int noOfHours, int payRate)
-{    /* Write your code here */
-    int sum = 0;
-    int ot = 0;
-
-    if(noOfHours <= 160)
+{
+    /* Write your code here */
+    int total = 0;
+    if(noOfHours > 160)
     {
-        sum = noOfHours * payRate;
-        return sum;
+        total = ((noOfHours-160) * (payRate*1.5)) + (160*payRate);
+        return total;
     }
-    else if(noOfHours > 160)
-    {
-        ot = (1.5 * payRate) * (noOfHours - 160);
-        sum = (160 * payRate) + ot;
-        return sum;
-    }
+    else
+        return (noOfHours * payRate);
 }
-
 void computePay2(int noOfHours, int payRate, double *grossPay)
-{    /* Write your code here */
-    int ot = 0;
-
-    if(noOfHours <= 160)
+{
+    /* Write your code here */
+    int total = 0;
+    if(noOfHours > 160)
     {
-        *grossPay = noOfHours * payRate;
-
+        total = ((noOfHours-160) * (payRate*1.5)) + (160*payRate);
+        *grossPay = total;
     }
-    else if(noOfHours > 160)
-    {
-        ot = (1.5 * payRate) * (noOfHours - 160);
-        *grossPay = (160 * payRate) + ot;
-
-    }
+    else
+        *grossPay = (noOfHours * payRate);
 }

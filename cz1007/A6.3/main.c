@@ -46,26 +46,38 @@ int main()
     while (choice < 4);
     return 0;
 }
+
 void getRect(Rectangle *r)
 {
+    /* Write your code here */
     printf("Enter top left point: \n");
     scanf("%lf %lf", &(r->topLeft.x), &(r->topLeft.y));
     printf("Enter bottom right point: \n");
     scanf("%lf %lf", &(r->botRight.x), &(r->botRight.y));
+
 }
 void printRect(Rectangle r)
 {
+    /* Write your code here */
     printf("Top left point: %.2f %.2f\n", r.topLeft);
     printf("Bottom right point: %.2f %.2f\n", r.botRight);
+
 }
 double findArea(Rectangle r)
 {
-    int area = 0;
-    area = (r.botRight.x - r.topLeft.x) * (r.botRight.y - r.topLeft.y);
+    /* Write your code here */
+    int a = 0;
 
-    if(area < 0)
+    a = (r.botRight.x - r.topLeft.x) * (r.topLeft.y - r.botRight.y);
+
+    if(a < 0)
     {
-        area = -1*area;
+        a = a*-1;
     }
-    return area;
+    return a;
 }
+
+
+
+
+

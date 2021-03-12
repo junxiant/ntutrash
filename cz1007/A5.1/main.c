@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-
 void insertChar(char *str1, char *str2, char ch);
-
 int main()
 {
     char a[80],b[80];
@@ -19,9 +17,9 @@ int main()
     puts(b);
     return 0;
 }
-
 void insertChar(char *str1, char *str2, char ch)
 {
+    /* Write your code here */
     int i = 0;
     int j = 0;
     int len = 0;
@@ -29,21 +27,19 @@ void insertChar(char *str1, char *str2, char ch)
 
     len = strlen(str1);
 
-    while(j < len)
+    while(j<len)
     {
         str2[i] = str1[j];
         i++;
         j++;
 
-        if(j%3==0 && j!=0)
+        if(j%3 == 0 && j!=0)
         {
             str2[i] = ch;
             i++;
         }
-
     }
 
     str2[i] = '\0';
 
 }
-

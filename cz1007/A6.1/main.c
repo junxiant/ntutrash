@@ -17,46 +17,31 @@ int main()
 }
 void readData(Person *p)
 {
+    /* Write your code here */
     int i;
-    char *a;
 
-    for(i = 0; i < 3; i++)
+    for(i=0; i<3; i++)
     {
-       // printf("Enter person %d\n", i+1);
-       // scanf("%s %d", (p+i)->name, &(p+i)->age);
+        printf("Enter person %d:\n", i+1);
+        scanf("%s %d", ((p+i)->name), &(p+i)->age);
 
-       // printf("Enter person %d:\n",(i+1));
-       // scanf("%s %d", (*(p+i)).name, &(*(p+i)).age);
-
-
-        printf("Enter person %d\n", i+1);
-        scanf("%s", &(p+i)->name);
-        scanf("%d", &(p+i)->age);
     }
-    char q, w, e, r;
-    q=&(p+0)->name;
-    w=&(p+1)->name;
-    e=&(p+2)->name;
-
-
-    printf("%s %s %s", q, w, e);
-
 
 }
+
 Person findMiddleAge(Person *p)
 {
-
-    if(p[0].age < p[1].age && p[0].age > p[2].age || p[0].age > p[1].age && p[0].age < p[2].age)
+    /* Write your code here */
+    if(p[0].age < p[1].age && p[0].age > p[2].age || p[0].age < p[2].age && p[0].age > p[1].age)
     {
         return p[0];
     }
-    else if(p[1].age < p[2].age && p[1].age > p[0].age || p[1].age > p[2].age && p[1].age < p[2].age)
+    else if(p[1].age < p[2].age && p[1].age > p[0].age || p[1].age < p[0].age && p[1].age > p[2].age)
     {
         return p[1];
     }
-    else if(p[2].age < p[1].age && p[2].age > p[0].age || p[2].age > p[1].age && p[2].age < p[0].age)
+    else if(p[2].age < p[1].age && p[2].age > p[0].age || p[2].age < p[0].age && p[2].age > p[1].age)
     {
         return p[2];
     }
-
 }

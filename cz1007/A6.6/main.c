@@ -1,115 +1,47 @@
 #include <stdio.h>
 #include <string.h>
-#define SIZE 50
-typedef struct
+struct account
 {
-    int id;
-    char name[50];
-} Student;
-void inputStud(Student *s, int size);
-void printStud(Student *s, int size);
-int removeStud(Student *s, int *size, char *target);
+    struct
+    {
+        char lastName[10];
+        char firstName[10];
+    } names;
+    int accountNum;
+    double balance;
+};
+void nextCustomer(struct account *acct);
+void printCustomer(struct account acct);
 int main()
 {
-    Student s[SIZE];
-    int size=0, choice;
-    char target[80], *p;
-    int result;
-
-    printf("Select one of the following options: \n");
-    printf("1: inputStud()\n");
-    printf("2: removeStud()\n");
-    printf("3: printStud()\n");
-    printf("4: exit()\n");
+    struct account record;
+    int flag = 0;
     do
     {
-        printf("Enter your choice: \n");
-        scanf("%d", &choice);
-        switch (choice)
-        {
-        case 1:
-            printf("Enter size: \n");
-            scanf("%d", &size);
-            printf("Enter %d students: \n", size);
-            inputStud(s, size);
-            break;
-        case 2:
-            printf("Enter name to be removed: \n");
-            scanf("\n");
-            fgets(target, 80, stdin);
-            if (p=strchr(target,'\n'))
-                *p = '\0';
-            printf("removeStud(): ");
-            result = removeStud(s, &size, target);
-            if (result == 0)
-                printf("Successfully removed\n");
-            else if (result == 1)
-                printf("Array is empty\n");
-            else if (result == 2)
-                printf("The target does not exist\n");
-            else
-                printf("An error has occurred\n");
-            break;
-        case 3:
-            printStud(s, size);
-            break;
-        }
+        nextCustomer(&record);
+        if ((strcmp(record.names.firstName, "End") == 0) &&
+                (strcmp(record.names.lastName, "Customer") == 0))
+            flag = 1;
+        if (flag != 1)
+            printCustomer(record);
     }
-    while (choice < 4);
-    return 0;
+    while (flag != 1);
 }
-void inputStud(Student *s, int size)
+void nextCustomer(struct account *acct)
 {
-    int i;
-    char *p;
-
-    for(i = 0; i < size; i ++)
-    {
-        printf("Student ID: \n");
-        scanf("%d", &(s+i)->id);
-
-        printf("Student Name: \n");
-        scanf("\n");
-        fgets((s+i)->name, 80, stdin);
-        if(p=strchr((s+i)->name, '\n')) //if not included it will be \n
-            *p = '\0';
-    }
+    /* Write your code here */
+    printf("Enter names (firstName lastName):\n");
+    scanf("%s %s", &(acct->names.firstName), &(acct->names.lastName));
+    if(strcmp(acct->names.firstName,"End") == 0 && strcmp(acct->names.lastName, "Customer") == 0) return;
+    printf("Enter account number:\n");
+    scanf("%d", &(acct->accountNum));
+    printf("Enter balance:\n");
+    scanf("%lf", &(acct->balance));
 
 }
-void printStud(Student *s, int size)
+void printCustomer(struct account acct)
 {
-    int i;
-
-    printf("The current student list: \n");
-
-    if(size == 0)
-    {
-        printf("Empty array\n");
-    }
-    else
-        for(i = 0; i < size; i++)
-        {
-            printf("Student ID: %d Student Name: %s\n", s[i].id, s[i].name);
-        }
-}
-int removeStud(Student *s, int *size, char *target)
-{
-    int i;
-
-    if(*size == 0)
-    {
-        return 1;
-    }
-
-    for(i = 0; i < *size; i++)
-    {
-        if(strcmp(s[i].name, target) == 0)
-        {
-            s[i].id = s[i+1].id;
-            strcpy(s[i].name,s[i+1].name);
-            (*size)--;
-            return 0;
-        }
-    }
-    return 2;
+    /* Write your code here */
+    printf("Customer record:\n");
+    printf("%s %s %d %.2lf\n", acct.names.firstName, acct.names.lastName, acct.accountNum, acct.balance);
 }

@@ -21,12 +21,19 @@ int main()
 }
 int rStrcmp(char *s1, char *s2)
 {
+    /* Write your code here */
     if(*s1 < *s2)
+    {
         return -1;
-    else if(*s1>*s2)
+    }
+    else if(*s1 > *s2)
+    {
         return 1;
+    }
     else if(*s1 == '\0')
+    {
         return 0;
+    }
 
     return rStrcmp(s1+1, s2+1);
 }

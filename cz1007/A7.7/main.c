@@ -3,22 +3,21 @@
 int rStrLen(char *s);
 int main()
 {
-    char str[80], *p;
-
+    char str[80];
     printf("Enter the string: \n");
-    fgets(str, 80, stdin);
-    if (p=strchr(str,'\n'))
-        *p = '\0';
+    gets(str);
     printf("rStrLen(): %d\n", rStrLen(str));
     return 0;
 }
 int rStrLen(char *s)
 {
-    /* Write your code here */
-    if(*s == '\0')
+    /* Write your program code here */
+    if(*s=='\0')
+    {
         return 0;
+    }
     else
     {
-        return 1 + rStrLen(s+1);
+        return 1+rStrLen(s+1);
     }
 }

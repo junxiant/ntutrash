@@ -1,9 +1,8 @@
 #include <stdio.h>
-
 void findAverage2D(float matrix[4][4]);
-
 int main()
 {
+
     float ar[4][4];
     int i,j;
 
@@ -13,9 +12,7 @@ int main()
         for (j = 0; j < 4; j++)
             scanf("%f", &ar[i][j]);
     }
-
     findAverage2D(ar);
-
     printf("findAverage2D(): :\n");
     for (i = 0; i < 4; i++)
     {
@@ -23,24 +20,20 @@ int main()
             printf("%.2f ", ar[i][j]);
         printf("\n");
     }
-
     return 0;
-
 }
-
 void findAverage2D(float matrix[4][4])
 {
-    int i, j;
+    /* Write your code here */
+    int r, c;
 
-    for(i = 0; i < 4; i++)
+    for(r=0;r<4;r++)
     {
         float sum = 0;
-
-        for(j = 0; j < 3; j++)
+        for(c=0;c<3;c++)
         {
-            sum = sum + matrix[i][j];
+            sum += matrix[r][c];
         }
-
-        matrix[i][3] = sum / 3;
+        matrix[r][3] = sum /3;
     }
 }
