@@ -1,79 +1,55 @@
 #include <stdio.h>
-
-float power1(float num, int p);
-void power2(float num, int p, float *result);
-
+int gcd1(int num1, int num2);
+void gcd2(int num1, int num2, int *result);
 int main()
 {
-    int power;
-    float number, result=-1;
-
-    printf("Enter the number and power: \n");
-    scanf("%f %d", &number, &power);
-
-    printf("power1(): %.2f\n", power1(number, power));
-
-    power2(number,power,&result);
-    printf("power2(): %.2f\n", result);
-
+    int x,y,result=-1;
+    printf("Enter 2 numbers: \n");
+    scanf("%d %d", &x, &y);
+    printf("gcd1(): %d\n", gcd1(x, y));
+    gcd2(x,y,&result);
+    printf("gcd2(): %d\n", result);
     return 0;
+}
+int gcd1(int num1, int num2)
+{
+    /* Write your code here */
+ int result;
+ if (num1 > num2){
+    result=num1;
+ }
+ else{
+    result=num2;
+ }
 
+ while (result!=0){
+    if(num1%result==0 && num2%result==0){
+        return result;
+    }
+    else{
+        result--;
+    }
+ }
 }
 
-float power1(float num, int p)
+void gcd2(int num1, int num2, int *result)
 {
-    int i;
-    float sum = 1;
+    /* Write your code here */
+     int temp_result;
+ if (num1 > num2){
+    temp_result=num1;
+ }
+ else{
+    temp_result=num2;
+ }
 
-    if(p > 0)
-    {
-        for(i = 0; i < p; i++)
-        {
-            sum = sum * num;
-        }
-        return sum;
+ while (temp_result!=0){
+    if(num1%temp_result==0 && num2%temp_result==0){
+        (*result)=temp_result;
+        break;
     }
-    else if(p < 0)
-    {
-        for(i = p; i < 0; i++)
-        {
-            sum = sum / num;
-
-        }
-        return sum;
+    else{
+        temp_result--;
     }
-    else if(p == 0)
-    {
-        return 1;
-    }
-
-}
-
-void power2(float num, int p, float *result)
-{
-    int i;
-    float sum = 1;
-
-    if(p > 0)
-    {
-        for(i = 0; i < p; i++)
-        {
-            sum = sum * num;
-
-        }
-        *result = sum;
-    }
-    else if(p < 0)
-    {
-        for(i = p; i < 0; i++)
-        {
-            sum = sum / num;
-
-        }
-        *result = sum;
-    }
-    else
-    {
-        *result = 1;
-    }
+ }
 }

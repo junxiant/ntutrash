@@ -1,90 +1,39 @@
 #include <stdio.h>
-
-int allEvenDigits1(int num);
-void allEvenDigits2(int num, int *result);
-
+int divide1(int m, int n, int *r);
+void divide2(int m, int n, int *q, int *r);
 int main()
 {
-    int number = 0;
-    int p=999;
-    int result=999;
+    int m, n, q, r;
 
-    printf("Enter a number: \n");
-    scanf("%d", &number);
-
-    p = allEvenDigits1(number);
-    if (p == 1)
-        printf("allEvenDigits1(): yes\n");
-    else if (p == 0)
-        printf("allEvenDigits1(): no\n");
-    else
-        printf("allEvenDigits1(): error\n");
-
-    allEvenDigits2(number, &result);
-    if (result == 1)
-        printf("allEvenDigits2(): yes\n");
-    else if (result == 0)
-        printf("allEvenDigits2(): no\n");
-    else
-        printf("allEvenDigits2(): error\n");
-
+    printf("Enter two numbers (m and n): \n");
+    scanf("%d %d", &m, &n);
+    q = divide1(m, n, &r);
+    printf("divide1(): quotient %d remainder %d\n", q, r);
+    divide2(m, n, &q, &r);
+    printf("divide2(): quotient %d remainder %d\n", q, r);
     return 0;
 }
-
-int allEvenDigits1(int num)
+int divide1(int m, int n, int *r)
 {
-    int odd = 0;
-    int even = 0;
-    int dig = 0;
-
-    while(num > 0)
+    /* Write your code here */
+    int count = 0;
+    while(m > n)
     {
-        dig = num % 10;
-        if(dig % 2 == 0)
-        {
-            even += 1;
-        }
-        else
-        {
-            odd += 1;
-        }
-        num = num / 10;
+        m = m-n;
+        count++;
     }
-    if(even != 0 && odd == 0)
-        {
-            return 1;
-        }
-    else
-        {
-            return 0;
-        }
+    *r = m;
+    return count;
 }
-
-void allEvenDigits2(int num, int *result)
+void divide2(int m, int n, int *q, int *r)
 {
-    int odd = 0;
-    int even = 0;
-    int dig = 0;
-
-    while(num > 0)
+    /* Write your code here */
+    int count = 0;
+    while(m > n)
     {
-        dig = num % 10;
-        if(dig % 2 == 0)
-        {
-            even += 1;
-        }
-        else
-        {
-            odd += 1;
-        }
-        num = num / 10;
+        m = m-n;
+        count++;
     }
-    if(even != 0 && odd == 0)
-        {
-            *result = 1;
-        }
-    else
-        {
-            *result = 0;
-        }
+    *r = m;
+    *q = count;
 }
