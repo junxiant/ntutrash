@@ -1,0 +1,156 @@
+mulTest()
+
+Test Case 1:
+How much is 9 times 1? 
+1
+How much is 9 times 3? 
+1
+How much is 1 times 5? 
+1
+How much is 4 times 3? 
+1
+How much is 4 times 3? 
+1
+0 answers out of 5 are correct.
+
+
+Test Case 2:
+How much is 5 times 6? 
+30
+How much is 7 times 7? 
+1
+How much is 1 times 9? 
+1
+How much is 3 times 3? 
+1
+How much is 2 times 1? 
+1
+1 answers out of 5 are correct.
+
+
+Test Case 3:
+How much is 7 times 2? 
+14
+How much is 3 times 5? 
+15
+How much is 8 times 3? 
+24
+How much is 9 times 1? 
+9
+How much is 5 times 5? 
+25
+5 answers out of 5 are correct.
+---------------------------------
+
+divide()
+
+Test Case 1:
+Enter m
+4
+Enter n
+7
+4/7=0
+
+Test Case 2:
+Enter m
+7
+Enter n
+7
+7/7=1
+
+Test Case 3:
+Enter m
+25
+Enter n
+7
+25/7=3
+---------------------------------
+
+modulus()
+
+Test Case 1:
+Enter m
+4
+Enter n
+7
+4%7=4
+
+Test Case 2:
+Enter m
+7
+Enter n
+7
+7%7=0
+
+Test Case 3:
+Enter m
+25
+Enter n
+7
+25%7=4
+---------------------------------
+
+countDigits()
+
+Test Case 1:
+Enter number n
+-12
+Negative number error!
+n: -12 - count = 0
+
+Test Case 2:
+Enter number n
+123
+n: 123 - count = 3
+
+Test Case 3:
+Enter number n
+121456
+n: 121456 - count = 6
+---------------------------------
+
+position()
+
+Test Case 1:
+Enter n
+12345
+Enter digit
+3
+Position: 3
+
+Test Case 2:
+Enter digit
+4
+Error input!!
+Position: -1
+
+Test Case 3:
+Enter n
+12145
+Enter digit
+1
+Position: 3
+---------------------------------
+
+extractOddDigits()
+
+Test Case 1:
+Enter n
+12345
+oddDigits = 135
+
+Test Case 2:
+Enter n
+54123
+oddDigits = 513
+
+Test Case 3:
+Enter n
+246
+oddDigits = -1
+
+Test Case 4:
+Enter n
+-12
+oddDigits = Error input!!
+---------------------------------
