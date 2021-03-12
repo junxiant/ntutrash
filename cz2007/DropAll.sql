@@ -1,0 +1,13 @@
+DROP TABLE Complaints_on_Orders;
+DROP TABLE Complaints_on_Shops;
+DROP TABLE Complaint;
+DROP TABLE Employee;
+DROP TABLE Feedback;
+DROP TABLE Price_History;
+DROP TABLE Products_in_Orders;
+DROP TABLE Products_in_Shops;
+DROP TABLE Orders;
+DROP TABLE Users;
+DROP TABLE Shops_Products_PriceVar;
+DROP TABLE Shops;
+DROP TABLE Products;
