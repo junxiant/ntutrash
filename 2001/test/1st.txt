@@ -1,0 +1,44 @@
+1.You are given the following algorithm.
+
+int Quiz (int n)
+if (n==1)
+return ++n;
+int k
+for (int
+k++;
+return k;
+Quiz (n/2);
+i=n/2;i<n;i+=1)
+}
+
+(i) find a recurrence equation for the number of postincrement as a function of N
+(ii) find the complexity class of the solution to equation in O notation.
+
+2. W(n) represents the number of operations performed by an algorithm. Solve the recurrence equation,
+W(1) 1 W(2) = 2
+W(n) = 2W(n-2) + 2W(n-1) + 2
+
+
+3. A hash table has a size of 13 and its hash function is defined as
+h(k) = k mod 13 Using open address hashing with double hashing, show how data records with key values 106 and 24 will be stored in the given hash table below. Fill
+in your answer in the hash table.
+The rehash function is defined as
+rehash(h, d) = (h(k) + i n d (k)) mod 13 where d(k) = 7 - (k mod 7) and i = 1,2 ... 12.
+
+
+
+
+
+
+
+4. For all the questions below, assume that the given array is to be sorted into ascending order. You should use the same versions of the sorting algorithms learnt from our lectures.
+(a) Given an input array A = [6, 3, 8, 4, 5, 9], what is the total number of key swaps when the 4th iteration of the outer for loop in Insertion Sort is completed?
+
+(b) An input array B contains key values that are sorted in descending order. Is this input a best case, worst case, or intermediate case of MergeSort, when
+by the number of key comparisons? Briefly justify your answer. 
+
+(c) Here is an array which has just been partitioned by the first step of Quicksort:
+YAI. comperisons coo.
+2
+0, 2, 5, 1, 7, 9, 12, 11
+Which of these elements could possibly be the pivot? Give all such elements if there are multiple of them.
