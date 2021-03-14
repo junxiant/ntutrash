@@ -1,0 +1,99 @@
+What is meant by the mutual exclusion property?
+Selected Answer:	No two processes can be in the critical section at the same time.
+
+
+Present one advantage and one dis-advantage of busy waiting implementation of semaphores.
+Selected Answer:	reduces context-switch overheads; infeasible on single-core CPUs.
+
+
+In Algorithm 2 in the lecture, Bounded Waiting is satisfied because
+Selected Answer:	A process sets its flag to true at the beginning of entry section; once the flag is set to true another process cannot subsequently enter its critical section.
+
+In Algorithm 2 in the lecture, Progress property is violated because
+Selected Answer:	Process P0 updates flag to true, context switch to Process P1, Process P1 updates flag to true, both the processes are now stuck in the entry while loop.
+
+
+
+What is meant by the Progress property?
+Selected Answer:	It is liveness; when no process is in the critical section, then a process cannot wait indefinitely to get access to the critical section.
+
+
+What is meant by the property of Bounded Waiting?
+Selected Answer:	It is fairness; if a process wants to get access to a critical section, another process cannot get access to the critical section repeatedly infinite number of times.
+
+
+
+Semaphore implementations do not require any special hardware support.
+Selected Answer:	False; Wait() and Signal() system calls must be executed atomically, which requires hardware support (either disabling of interrupts or atomic instructions like TestAndSet()).
+
+In the blocking implementation of semaphores, a value of -5 indicates that 4 processes are currently blocked on the semaphore.
+Selected Answer:	False; it indicates that 5 processes are currently blocked on the semaphore.
+
+Race conditions can be prevented by disabling interrupts in critical sections.
+Selected Answer:	True; disabling interrupts will prevent the execution of any other process or even the OS. This will ensure mutual exclusion.
+
+
+In Algorithm 1 presented in the lecture, progress is violated because
+Selected Answer:	Process P1 executes the critical section once, enters a long remainder section, context switch occurs to process P0, process P0 executes the critical section once and then waits indefinitely to get access to the critical section again.
+
+
+
+Algorithm 3 in the lecture satisfies the Bounded Waiting property because
+Selected Answer:	If Process P0 is waiting in the entry while loop, Process P1's flag is true and turn is 1; when Process P1 tries to enter the critical section subsequently it will set turn to 0; Process P0 is no longer blocked. Identical argument applies to Process P1 because the solution is symmetric.
+
+Algorithm 3 in the lecture satisfies Progress property because
+Selected Answer:	Suppose Process P0 wants access to the critical section; then flag for Process P0 is true; if Process P1 is in the entry section then either P0 or P1 will get access to the critical section; if Process P1 is in the critical section then Progress is vacuously satisfied; if Process P1 is in the remainder section then Process P0 can get access to the critical section.
+
+
+Explain how TestAndSet(lock) works in the Entry section?
+Selected Answer:	If the call changed the value of lock from false to true, exit the Entry section and enter the Critical section.
+
+
+In TestAndSet(lock) based implementation of the Entry section, explain why Mutual Exclusion is successful.
+Selected Answer:	A process enters its critical section only when the lock value is changed from false to true by the TestAndSet() call. The lock remains true while the process is in the Critical section. Since the call to TestAndSet() is atomic, any other process would see the lock as true when executing TestAndSet().
+
+
+In the Reader-Writer implementation, IF 1) a writer W1 is currently accessing the database, 2) another writer W2 is waiting to get access to the database, and 3) a reader R1 then requests access, THEN R1 will get access before W2.
+Selected Answer:	False; R1 will get access after W2 assuming the semaphore blocked list is First-In-First-Out.
+
+In the Reader-Writer implementation, explain all the functions for each semaphore.
+Selected Answer:	mutex is a binary semaphore to ensure mutually exclusive updates to the readcount variable; wrt is a binary semaphore to ensure mutually exclusive access among writers as well as between readers and writers.
+
+
+In the Reader-Writer implementation, explain what it means by "the reader is given preference".
+Selected Answer:	While a reader is reading, other readers will be allowed access to the database, even if writers are currently waiting to get access.
+
+
+In the Producer-Consumer Bounder-Buffer implementation, why is the Wait() on empty or full semaphore done before the Wait() on mutex?
+Selected Answer:	Otherwise, it can lead to a deadlock when the buffer is empty/full, because to add/remove items in the buffer the mutex semaphore must be acquired.
+
+
+In the busy waiting implementation of binary semaphores, explain all the atomic operation requirements.
+Selected Answer:	The increment and decrement to the semaphore value must be atomic to prevent a race condition; the busy waiting while() loop and the decrement to the semaphore value in Wait() must also be atomic to ensure mutual exclusion.
+
+Why must Wait() and Signal() system calls with blocking implementation be atomic? Give all reasons.
+Selected Answer:	To prevent race condition in the updates to the value of the semaphore; To ensure mutual exclusion by guaranteeing that the update to the semaphore value and its checking in the if() condition happen atomically in each system call.
+
+
+What are the sequence of atomic operations in the TestAndSet(lock) function call?
+Selected Answer:	fetch the current value of lock in a local variable; store the value true in the lock; return the fetched value to the caller.
+
+In the Dining-Philosopher implementation, explain how allowing at most four philosophers to be hungry simultaneously solves the deadlock problem.
+Selected Answer:	Assume philosophers first acquire the chopstick on the left and then the one on the right. A philosopher who is sitting to the left of the non-hungry philosopher will always get his second chopstick. If he also gets his first chopstick, he will eat. Else, his left neighbour will eat.
+Race condition is not possible when updating a file.
+Selected Answer:	False; when multiple processes are updating the same file concurrently this will cause a race condition. It is however handled in the OS because file updates occur through system calls.
+
+Explain why Bounded Waiting property is not satisfied in the TestAndSet(lock) implementation of the Entry section.
+Selected Answer:	TestAndSet(lock) does not store information about failed attempts to acquire the lock. Hence, a process that attempts to acquire an available lock will be given the lock, irrespective of the number of failed attempts by other processes.
+
+In the producer-consumer bounded buffer implementation, explain the role of each semaphore.
+Selected Answer:	mutex is a binary semaphore for mutually exclusive access to the shared buffer; empty is used by the Producer to check if the buffer is full; full is used by the Consumer to check if the buffer is empty.
+
+
+The busy waiting implemention of semaphores is infeasible only on single-core CPUs.
+Selected Answer:	True; because to release the semaphore the busy waiting must be interrupted on a single-core CPU which then leads to the Wait() system call being non-atomic.
+
+Race condition is impossible with a single writer, multiple reader process system.
+Selected Answer:	True; in this case the writes and reads can be causally ordered without any issues.
+
+

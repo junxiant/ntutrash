@@ -1,0 +1,35 @@
+
+In a resource allocation graph, the dots inside a resource denote
+Selected Answer:	The number of instances of that resource available in the system.
+
+
+The necessary conditions for a deadlock are
+Selected Answer:	circular wait: each process in a cycle requests for a resource held by the next process in the cycle; mutual exclusion: a resource can only be used mutually exclusively; hold and wait: processes are holding resources while requesting for others; no preemption: a locked resource can only be released voluntarily by the process holding it.
+
+
+False; deadlock can still be avoided if processes release resources that are currently held before they take more resources.
+In Banker's algorithm, what information does the Allocation matrix contain?
+Selected Answer:	At each time instant, it denotes the allocated resources for each process.
+
+
+In Banker's algorithm, what is the information stored in the Need matrix?
+Selected Answer:	At each time instant, it denotes the remaining resource requests (not yet requested) for each process.
+
+
+
+If a resource allocation graph with multiple instances for each resource type contains a cycle, then there is a guaranteed deadlock
+Selected Answer:	False; there is a possibility of a deadlock, but the circular wait and hold and wait conditions could be broken by a process outside the cycle.
+
+
+If a resource allocation graph with one instance for each resource type contains a cycle, then there is a guaranteed deadlock.
+Selected Answer:	True; the cycle denotes circular wait and hold and wait conditions which cannot be broken by any process outside the cycle.
+
+
+The odd-even solution to the dining philosopher problem (odd philosophers first take the left chopstick and then the right; even philosophers first take the right chopstick and then the left) breaks which one of the four deadlock conditions?
+Selected Answer:	Circular wait.
+
+
+The ordered locking solution to the dining-philosopher problem (chopsticks must be taken in increasing order of their number), breaks which one of the four deadlock conditions.
+Selected Answer:	Circular Wait.
+
+

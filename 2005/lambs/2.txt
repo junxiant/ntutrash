@@ -1,0 +1,62 @@
+
+What is an I/O burst?
+Selected Answer:	Time taken by a single I/O system call executed by a process.
+
+
+In a nonpreemptive CPU scheduler, when does scheduling happen?
+Selected Answer:	Upon transitions 1 and 5 and ocassionally upon transition 4 (in the process state transition diagram).
+
+
+Response Time is defined as:
+Selected Answer:	Time taken for a process between transition 4 and the first occurrence of transition from "ready" to "running" (in the process state transition diagram)
+
+
+Describe one advantage and one disadvantage of Shortest-Job First (SJF) scheduling
+Selected Answer:	efficient way to handle convoy effect; not implementable due to lack of information on CPU burst lengths
+
+
+Multi-level queue scheduling can be either preemptive or non-preempitive, but not both
+Selected Answer:	False, it can be both (e.g., one queue can use RR while the other can use FCFS).
+
+
+
+Under First-Come First-Served (FCFS) scheduling, what is convoy effect?
+Selected Answer:	A long process is in the "running" state, while several short processes are waiting in the "ready" state
+
+
+
+
+In First-Come First-Served (FCFS) scheduling, the CPU scheduler is executed whenever a new process is "admitted" in the system.
+Selected Answer:	False, it is a nonpreemptive scheduler and hence will only execute when either a "running" process completes or moves to the "waiting" state, or there is no running process when the new process is "admitted".
+
+
+What is Aging?
+Selected Answer:	A technique in which the priority of processes that are unable to execute is slowly increased over time to avoid starvation.
+
+
+
+The difference between non-preemptive Shortest-Job First (SJF) and Shortest Remaining Time First (SRTF) is that
+Selected Answer:	SJF is unaffected by newly admitted processes when a process is "running"; In SRTF if the current CPU burst of the newly admitted process is shorter than the remaining CPU burst of the running process, then a context-switch is triggered.
+
+
+Round-Robin (RR) scheduling has lower average waiting time for processes when compared to Shortest Remaining Time First (SRTF) scheduling.
+Selected Answer:	False, SRTF has the lowest average waiting time among all preemptive scheduling algorithms.
+
+
+What is the need for multi-level queue scheduling?
+Selected Answer:	Processes with different requirements can be mapped to different queues and each queue can have a different scheduling policy (e.g., RR for interactive processes and FCFS for background).
+
+
+Shortest-Job-First (SJF) is optimal in the sense that it,
+Selected Answer:	Minimizes the average waiting time for all processes.
+
+
+Under Round-Robin scheduling, if quantum size is q, average CPU burst length is B, average number of CPU bursts per process is N, and average number of processes in the ready queue is R, then the average response time for a process is?
+Selected Answer:	(R-1) x q
+
+
+Turnaround Time is defined as:
+Selected Answer:	Time taken between transition 4 and transition 5 (in the process state transition diagram).
+
+
+

@@ -1,0 +1,19 @@
+1. Can reduce cpi using pipeline alone. F
+
+2. WriteEnable must be pipelined if only R instr executed. F
+
+3. Value of X1 = 10. All other = 0. Calculate target data memory addr of D instr "00A04305".
+Check if instr is I, R, D, etc
+op=5(0000 0000 101)11bits
+address= 4 (0 0000 0100) 9bits
+Op2 = 0 (00)
+Rn(Des) = 18 (11000)5bits
+Rt = 0 0101
+
+Load into target data memory address = Address + Rn = 4+0=4
+Ans is 4 as it ask for target data memory address
+
+4. 
+2 statements back to back with no NOPs.
+1st: only execute 2nd statement with INITIAL values. (Value is old because no NOP - Data dependency)
+2nd: execute both statements with UPDATED values after each statement.
