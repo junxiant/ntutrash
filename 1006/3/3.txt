@@ -1,0 +1,82 @@
+						A
+1)	List the logic state of IDLE state, START bit and SToP bit for a standard UART transmission?
+a.	HIGH, LOW, HIGH
+b.	LOW, HIGH, LOW
+c.	LOW, LOW, HIGH
+d.	None of the above
+
+2)	Which is the UART transmitter the setup used for example 5.2(Standard serial Communication) of this lab?
+a.	Arduino sketch compiler
+b.	Serial Monitor Software
+c.	Desktop PC
+d.	Arduino board
+
+3)	What is the functions of Parity bit in the UART transmission?
+i.	Error Correction
+ii.    Error Detection
+iii.   Error Classification
+iv.   Error Prevention
+a.	i, ii
+b.	ii, iii, iv
+c.	ii
+d.	ii, iv
+
+4)	The duration for each bit observed on the oscilloscope is 17.3Us. UART configuration is 7 Data bits and 1 STOP bit and Even Parity what is the baud rate used in this UART transmission
+a.	3200
+b.	3760
+c.	32000
+d.	37600
+5)	UART transmitter uses a buffer. What is the purpose of the buffer?
+a.	Backup form the main memory
+b.	Mitigate the different from the transmitter and receiver
+c.	reduce the UART transmission noise 
+d.	for Parity comparison
+6)	
+
+
+
+
+
+
+
+
+
+Q: which is the transmitter used to transmit data.
+A: arduino board
+●	Serial Monitor can also use to transmit data
+
+Q: what is the buffer in the transmitter and receiver for?
+A:mitigate
+
+Q: transmitter has been configured with 7O1. if transmitter baud rate is slower than receiver by half whats the data you'll receive using either (odd/even) parity
+transmits 0x7A ('z')
+A: should be 0x18 with either
+(error/no error) in parity
+
+Q: if T=~17.3µs what is the baud rate
+
+
+Q: list the logic level of IDLE, START & STOP
+A: High, Low, high
+
+Q: parity is used to detect?
+A: error detection
+
+Q: how many cps for a 7bit data w 1 bit parity on a system thats 9600 Baudrate
+A: 7bit data + 1 bit parity + 1 start +1 stop = 10 bit
+9600/10 = 960
+
+
+
+
+
+
+2 kbytes = 2048 bytes.
+Transmission of a byte requires:
+●	1 start bit
+●	8 bits = actual byte
+●	1 bit parity
+●	2 bits stop
+Total of 12 bits.
+The baud is 2048 * 12 = 24576 baud
+

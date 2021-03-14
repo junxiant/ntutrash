@@ -1,0 +1,39 @@
+Qn1
+x = linspace(0,2,21)
+y = f(x)
+deff('y=f(x)','y = (%e ^ x) - 3 * x')
+x1 = 0;
+x2 = 1;
+t = 10^-6
+
+function [x3] = bisection(x1, x2)
+while abs(x1 - x2) / 2 >= t,
+x3 = (x1 + x2) / 2;
+if ( f(x3) / abs(f(x3)) ) == ( f(x1) / abs(f(x1))) then
+	x1 = x3;
+	else x2 = x3;
+	end;
+end;
+endfunction
+
+bisection(0,1)
+bisection(1,2)
+bisection(0,2)
+
+Qn2
+x = linspace(-1.5,1.5,21)
+y= f(x)
+clear f
+deff('y=f(x)','y = x^3 + x^2 + 0.5')
+deff('y=f1(x)','y = (3 * x^2) + (2 * x)')
+t = 10^-6
+x2= 0
+
+function [x2] = newton(x1)
+xt = x1;
+while abs(x1-x2) >= t do
+x1 = xt;
+x2 = x1 - (f(x1)/f1(x1));
+xt = x2;
+end
+endfunction
