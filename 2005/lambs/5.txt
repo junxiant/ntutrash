@@ -1,0 +1,58 @@
+Logical address and physical address will be the same if address binding is performed in
+Selected Answer:	both compile-time and load-time
+
+Which of the following memory allocation approaches allocates contiguous memory space for a process?
+Selected Answer:	a. 
+Dynamic partitioning
+
+
+Memory compaction can be performed if address binding is done in
+Selected Answer:	b. 
+execution-time
+
+
+Considering a logical address with a page size of 8 KB, how many bits must be used to represent the page offset in the logical address?
+Selected Answer:	d. 
+13
+
+The mapping of a logical address to a physical address is done dynamically in
+Selected Answer:	a. 
+execution-time binding
+
+Which dynamic storage-allocation policy results in the smallest leftover hole in memory?
+Selected Answer:	b. 
+Best fit
+
+
+Which of the following memory allocation methods may result in external fragmentation?
+Selected Answer:	b. 
+Both dynamic partitioning & segmentation
+
+Which dynamic storage-allocation policy results in the largest leftover hole in memory?
+Selected Answer:	c. 
+Worst fits
+
+
+Given the logical address 0xAEF9 (in hexadecimal) with a page size of 256 bytes, what is the page number of this logical address?
+Selected Answer:	c. 
+0xAE
+
+
+Which of the following memory allocation methods may result in internal fragmentation?
+Selected Answer:	b. 
+Paging
+
+Which dynamic storage-allocation policy has least overhead?
+Selected Answer:	b. 
+First fit
+
+
+Which of the following memory allocation approaches assumes logical address space of a process is contiguous?
+Selected Answer:	d. 
+All the above
+
+Which of the following statement about memory compaction is true?
+Selected Answer:	c. 
+It is possible only if address binding is dynamic and done at execution time.
+
+
