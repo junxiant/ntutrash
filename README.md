@@ -1,1 +1,1 @@
-help la
+bachelor of human resources and google
